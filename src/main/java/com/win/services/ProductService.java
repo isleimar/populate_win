@@ -1,5 +1,6 @@
 package com.win.services;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,8 +33,18 @@ public class ProductService {
 				.builder()
 				.name(p.getName())
 				.description(p.getDescription())
+				.isDivisible(RandomUtil.getRandomInt(2)==0)
+				.likes(RandomUtil.getRandomInt(1000))
 				.price(p.getPrice())
+				.productStatus(getProductStatus())
+				.stock(RandomUtil.getDoubleRandom(0.0, 50.0))
+				.score(RandomUtil.getRandomInt(1000))
+				
 				.build();
+	}
+	
+	private String  getProductStatus() {
+		return RandomUtil.getRandomItemList(Arrays.asList(ProductWinDto.PRODUCT_STATUS));
 	}
 
 }

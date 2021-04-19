@@ -19,8 +19,9 @@ public class UserWinDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	public static String[] USER_STATUS = {
-			"NEW",
+			"CREATED",
 			"INACTIVE",
+			"DELETED",
 			"ACTIVE",
 			"BLOCKED"};
 	

@@ -36,7 +36,7 @@ public class ClientService {
 				.password(p.getPassword())
 				.userStatus(peopleService.getRandomUserStatus())
 				.people(peopleService.dtoToPeople(p))
-				.score(10)
+				.score(RandomUtil.getRandomInt(1000))
 				.build();
 				
 	}

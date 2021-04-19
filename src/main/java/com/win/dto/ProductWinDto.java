@@ -19,6 +19,11 @@ import lombok.ToString;
 public class ProductWinDto implements Serializable {	
 	private static final long serialVersionUID = 1L;
 	
+	public static String[] PRODUCT_STATUS = {
+			"INACTIVE",
+			"ACTIVE",
+			"BLOCKED"};
+	
 	private String cod;
 	private LocalDateTime createDate;
 	@JsonBackReference
