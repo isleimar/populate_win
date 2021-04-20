@@ -17,6 +17,8 @@ public class ProductService {
 	
 	@Autowired
 	GeneratorResource generatorResource;
+	@Autowired
+	CategoryService categoryService;
 	
 	@Value("${product.count}")
 	private int count;
@@ -31,15 +33,15 @@ public class ProductService {
 	private ProductWinDto dtoToProduc(ProductGeneratorDto p) {
 		return ProductWinDto
 				.builder()
+				.productStatus(getProductStatus())
+				.productCategories(categoryService.getListCategory(p.getCategories()))
 				.name(p.getName())
 				.description(p.getDescription())
 				.isDivisible(RandomUtil.getRandomInt(2)==0)
 				.likes(RandomUtil.getRandomInt(1000))
 				.price(p.getPrice())
-				.productStatus(getProductStatus())
 				.stock(RandomUtil.getDoubleRandom(0.0, 50.0))
 				.score(RandomUtil.getRandomInt(1000))
-				
 				.build();
 	}
 	

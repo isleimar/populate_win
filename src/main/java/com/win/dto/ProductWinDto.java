@@ -2,8 +2,10 @@ package com.win.dto;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.win.generator.dto.ProductCategoryGeneratorDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,7 +32,7 @@ public class ProductWinDto implements Serializable {
 	@ToString.Exclude
 	private ShopWinDto shop;
 	private String productStatus;
-//	List<ProductCategory> productCategories;
+	List<ProductCategoryGeneratorDto> productCategories;
 	private String name;
 	private String description;
 	private Double price;

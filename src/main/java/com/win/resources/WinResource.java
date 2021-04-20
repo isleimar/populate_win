@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.win.dto.AdministratorWinDto;
 import com.win.dto.ClientWinDto;
 import com.win.dto.VendorWinDto;
+import com.win.generator.dto.ProductCategoryGeneratorDto;
 
 @FeignClient(name="win", url="localhost:8080/api/v1")
 public interface WinResource {
@@ -20,5 +21,11 @@ public interface WinResource {
 	
 	@PutMapping("/vendor/")
 	void putVendor(@RequestBody VendorWinDto vendorWinDto);
+	
+	@PutMapping("/product_category/")
+	ProductCategoryGeneratorDto putCategoria(@RequestBody ProductCategoryGeneratorDto vendorWinDto);
+	
+	
+	
 
 }

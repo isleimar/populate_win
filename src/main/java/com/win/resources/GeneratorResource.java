@@ -3,7 +3,6 @@ package com.win.resources;
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -22,5 +21,10 @@ public interface GeneratorResource {
 	
 	@GetMapping(value="product/rnd?count={count}", produces = "application/json")
 	List<ProductGeneratorDto> getProductGeneratorDtos(@PathVariable("count") Integer count);
+	
+	@GetMapping(value = "lorem/bytes?count={count}&hasIntro=false", produces = "text/plain")
+	String getLoremBytes(@PathVariable("count") Integer count);
+	
+	
 
 }
